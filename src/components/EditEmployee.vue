@@ -35,7 +35,7 @@ export default {
   name: "edit-employee",
   data() {
     return {
-      employee_id: null,
+      employee_ID: null,
       name: null,
       dept: null,
       position: null
@@ -84,7 +84,7 @@ export default {
                 employee_ID: this.employee_ID,
                 name: this.name,
                 dept: this.dept,
-                position: this.position
+                position: this.Position
               })
               .then(() => {
                 this.$router.push({

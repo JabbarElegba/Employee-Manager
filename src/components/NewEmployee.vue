@@ -9,37 +9,25 @@
             <label>Employee ID#</label>
           </div>
         </div>
-      </form>
-    </div>
-    <div class="row">
-      <form @submit.prevent="saveEmployee" class="col s12">
         <div class="row">
           <div class="input-field col s12">
             <input type="text" v-model="name" required />
             <label>Name</label>
           </div>
         </div>
-      </form>
-    </div>
-    <div class="row">
-      <form @submit.prevent="saveEmployee" class="col s12">
         <div class="row">
           <div class="input-field col s12">
             <input type="text" v-model="dept" required />
             <label>Department</label>
           </div>
         </div>
-      </form>
-    </div>
-    <div class="row">
-      <form @submit.prevent="saveEmployee" class="col s12">
         <div class="row">
           <div class="input-field col s12">
-            <input type="text" v-model="position" required />
+            <input type="text" v-model="Position" required />
             <label>Position</label>
           </div>
         </div>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn green">Submit</button>
         <router-link to="/" class="btn red">Cancel</router-link>
       </form>
     </div>
@@ -54,7 +42,7 @@ export default {
       employee_ID: null,
       name: null,
       dept: null,
-      position: null
+      Position: null
     };
   },
   methods: {
@@ -64,10 +52,10 @@ export default {
           employee_ID: this.employee_ID,
           name: this.name,
           dept: this.dept,
-          position: this.Position
+          Position: this.Position
         })
         .then(docRef => {
-          //  console.log("Client added: ", docRef.ID);
+          console.log("Client added: ", docRef.id);
           this.$router.push("/");
         })
         .catch(error => {
